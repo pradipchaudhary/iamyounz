@@ -3,3 +3,7 @@ Inspiring millions through emotional stories, life lessons, love, success, and m
 
 
 https://www.facebook.com/profile.php?id=61584242948204
+
+https://www.facebook.com/profile.php?id=61584242948204&sk=reels_tab
+https://www.youtube.com/@Whisprs-orginal
+https://www.facebook.com/ramblingoutdoors/reels/
