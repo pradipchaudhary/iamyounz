@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import QuoteSection from "@/components/QuoteSection";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-glow">
         <Hero />
-        
+        <QuoteSection />
       </main>
       {/* Footer  */}
       <Footer />
