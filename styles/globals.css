@@ -12,6 +12,10 @@
     --accent-hover: #c60812;
   }
 
+  @theme {
+  --font-kalam: var(--font-kalam);
+  }
+
   html {
     background-color: #0B0B0B;
     color: #F5F2ED;
