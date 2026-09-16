@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import QuoteSection from "@/components/QuoteSection";
+import SubscribeCTA from "@/components/SubscribeCTA";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="flex-glow">
         <Hero />
         <QuoteSection />
+        <SubscribeCTA />
       </main>
       {/* Footer  */}
       <Footer />
