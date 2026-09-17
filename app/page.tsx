@@ -1,4 +1,5 @@
 import BrandStatement from "@/components/BrandStatement";
+import CategorySection from "@/components/CategorySection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-glow">
         <Hero />
         <BrandStatement />
+        <CategorySection />
         <QuoteSection />
         <SubscribeCTA />
       </main>
