@@ -28,7 +28,7 @@ export default function BrandStatement() {
           {/* Editorial Oversized Statement */}
           <blockquote className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light text-[#F5F2ED] leading-[1.2] sm:leading-[1.18] tracking-tight">
             Sometimes a story isn&apos;t just something you hear.{' '}
-            <span className="italic text-[#A6A29C] font-normal block sm:inline mt-2 sm:mt-0">
+            <span className="italic font-kalam text-[#EF4444] font-normal block sm:inline mt-2 sm:mt-0">
               It&apos;s something you recognize.
             </span>
           </blockquote>
@@ -40,7 +40,7 @@ export default function BrandStatement() {
             </div>
             <div className="md:col-span-8">
               <p className="text-base sm:text-lg text-[#A6A29C] font-light leading-relaxed max-w-2xl">
-                <strong className="font-kalam text-gray-300">iamyounz</strong>  was created as a sanctuary for the quiet truths we rarely speak aloud. Through intimate cinematic narratives on love, heartbreak, ambition, failure, resilience, and personal healing, each piece is crafted to make you pause, breathe, feel deeply, and remember that you are never walking through this life alone.
+                <strong className="font-kalam  text-[#EF4444]">iamyounz</strong>  was created as a sanctuary for the quiet truths we rarely speak aloud. Through intimate cinematic narratives on love, heartbreak, ambition, failure, resilience, and personal healing, each piece is crafted to make you pause, breathe, feel deeply, and remember that you are never walking through this life alone.
               </p>
             </div>
           </div>
