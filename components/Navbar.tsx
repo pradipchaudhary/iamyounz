@@ -61,13 +61,23 @@ export default function Navbar(){
                             alt={'iamyounz'}
                             fill
                             sizes="40px"
-                            className="object-cover object-center"
+                            className="object-cover object-center transition-transform duration-300 ease-out group-hover:scale-110"
                             referrerPolicy="no-referrer"
                         />
                         </div>
-                        <span className="text-2xl font-kalam font-normal text-[#F5F2ED]">
+                        <Image
+                            src="/img/logo.png"
+                            alt={'iamyounz'}
+                            width={130}
+                            height={40}
+                            className="object-contain object-left"
+                            referrerPolicy="no-referrer"
+                            
+                        />
+                        {/* <span className="text-2xl font-kalam font-normal text-[#F5F2ED]">
                         immyounz
-                        </span>
+                        </span> */}
+                        
                     </Link>
                     
                     {/* Desktop Navigation */}
