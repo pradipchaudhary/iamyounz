@@ -11,9 +11,9 @@ import { CATEGORIES } from '@/data/categories';
 export default function CategorySection() {
   return (
     <section id="stories" className="py-24 sm:py-32 px-6 sm:px-8 bg-[#0B0B0B] relative">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-white/[0.08] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between ml-10 mb-12 sm:mb-16 pb-6 border-b border-white/[0.08] gap-6">
           <div>
             <span className="text-xs uppercase tracking-[0.15em] text-[#EF4444] font-sans font-medium mb-3 block">
               Curated Themes
@@ -74,7 +74,7 @@ export default function CategorySection() {
                     <span className="text-[11px] uppercase tracking-[0.22em] text-[#EF4444] font-sans font-medium block">
                       Theme Collection
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-serif text-[#F5F2ED] tracking-tight transition-transform duration-300 group-hover:translate-x-1">
+                    <h3 className="text-2xl sm:text-3xl font-kalam text-[#F5F2ED] tracking-tight transition-transform duration-300 group-hover:translate-x-1">
                       {cat.name}
                     </h3>
                     <p className="text-[13px] text-[#A6A29C] font-light leading-relaxed line-clamp-2">
