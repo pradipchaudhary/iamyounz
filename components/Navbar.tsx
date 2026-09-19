@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { ArrowUpRight, Play } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowUpRight, Menu, Play, X } from "lucide-react";
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -111,9 +111,88 @@ export default function Navbar(){
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </a>
                     </div>
+
+                    {/* Mobile Hamburger Button */}
+                    <button
+                        type="button"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="md:hidden p-2 text-[#F5F2ED] hover:text-[#EF4444] transition-colors focus:outline-none"
+                        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                        id="nav-mobile-toggle"
+                    >
+                        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
                     
                 </div>
             </header>
+
+            {/* Mobile Drawer */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
+                    className="fixed inset-0 z-40 bg-[#0B0B0B]/98 backdrop-blur-2xl md:hidden pt-24 px-8 flex flex-col justify-between pb-12"
+                >
+                    <div className="flex flex-col gap-6 pt-4">
+                    {/* Brand in Mobile Drawer */}
+                    {/* <div className="flex items-center gap-3 pb-6 border-b border-white/[0.08]">
+                        <div className="relative w-10 h-10 rounded-full overflow-hidden ring-1 ring-[#E50914]/60 flex-shrink-0 bg-[#161616]">
+                        <Image
+                            src={avatarSrc}
+                            alt={channel.title || 'iamyounz'}
+                            fill
+                            sizes="40px"
+                            className="object-cover object-center"
+                            referrerPolicy="no-referrer"
+                        />
+                        </div>
+                        <span className="font-cinematic tracking-[0.24em] uppercase text-sm font-semibold text-[#F5F2ED]">
+                        iamyounz
+                        </span>
+                    </div> */}
+
+                    <span className="text-[11px] uppercase tracking-widest text-[#77736D]">
+                        Navigation
+                    </span>
+                    {NAV_LINKS.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`text-2xl font-serif tracking-wide py-1 flex items-center justify-between ${
+                            isActive ? 'text-[#EF4444]' : 'text-[#F5F2ED]'
+                            }`}
+                        >
+                            <span>{link.name}</span>
+                            {isActive && <span className="w-2 h-2 rounded-full bg-[#E50914]" />}
+                        </Link>
+                        );
+                    })}
+                    </div>
+
+                    <div className="flex flex-col gap-4 pt-8 border-t border-white/[0.08]">
+                    <a
+                        href="https://www.youtube.com/@iamyounz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#E50914] text-white font-medium text-xs tracking-widest uppercase transition-transform active:scale-95 shadow-lg shadow-[#E50914]/25"
+                    >
+                        <Play className="w-4 h-4 fill-current" />
+                        <span>Subscribe on YouTube</span>
+                    </a>
+
+                    <p className="text-center text-xs text-[#77736D] mt-1">
+                        Inspiring millions through emotional stories.
+                    </p>
+                    </div>
+                </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }
