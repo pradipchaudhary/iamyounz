@@ -38,7 +38,7 @@ export default function Hero(){
                     <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-[#121212]/80 backdrop-blur-xl mb-5 sm:mb-6 shadow-lg shadow-black/40 hover:border-[#E50914]/40 transition-colors">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E50914] animate-pulse" />
                         <span className="text-[8px] sm:text-[12px] tracking-[0.16em] text-[#EF4444] uppercase font-cinematic font-semibold">
-                            ORIGINAL CINEMA • DAILY AT 6:00 PM EST
+                            ORIGINAL CINEMA 
                         </span>
                     </div>
 
@@ -46,7 +46,7 @@ export default function Hero(){
                     <div className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-kalam font-light text-[#F5F2ED] tracking-tight leading-[1.12] sm:leading-[1.08] mb-4 sm:mb-5 max-w-3xl">
                         Stories that touch the heart.
                         <br className="hidden sm:inline" />
-                        <span className="font-normal text-[#E8E4DC] block sm:inline sm:ml-2">
+                        <span className="font-normal text-[#EE4444] block sm:inline sm:ml-2">
                         Lessons that change the way you see life.
                         </span>
                     </div>

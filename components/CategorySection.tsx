@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { CATEGORIES } from '@/data/categories';
-// import { CATEGORIES } from '@/data/categories';
 
 
 export default function CategorySection() {
