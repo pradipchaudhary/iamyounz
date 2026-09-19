@@ -4,17 +4,21 @@ import Link from "next/link";
 
 export default function Hero(){
     const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@iamyounz";
+    // https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2000&auto=format&fit=crop
     return(
         <>
             <section className="relative min-h-[100svh] w-full flex flex-col justify-between items-center overflow-hidden bg-[#0B0B0B] pt-24 sm:pt-28 pb-6 sm:pb-8 px-6 sm:px-8">
 
                 <Image
-                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2000&auto=format&fit=crop"
+                    src="/img/hero-bg2.jpeg"
                     alt="Emotional cinematic visual for iamyounz"
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover object-center filter brightness-[0.42] contrast-[1.12]"
+                    className="object-cover object-center
+                    md:object-[center_35%]
+                    lg:object-[center_30%]
+                    xl:object-[center_15%] filter brightness-[0.42] contrast-[1.12]"
                     referrerPolicy="no-referrer"
                 />
 
@@ -35,9 +39,9 @@ export default function Hero(){
                 {/* Central Single-Column Content Block — Perfectly fitted for viewport */}
                 <div className="relative z-10 max-w-4xl mx-auto w-full text-center flex flex-col items-center my-auto">
                     {/* Eyebrow Pill */}
-                    <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-[#121212]/80 backdrop-blur-xl mb-5 sm:mb-6 shadow-lg shadow-black/40 hover:border-[#E50914]/40 transition-colors">
+                    <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-[#121212]/10 backdrop-blur-xl mb-5 sm:mb-6 shadow-lg shadow-black/40 hover:border-[#E50914]/40 transition-colors">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E50914] animate-pulse" />
-                        <span className="text-[8px] sm:text-[12px] tracking-[0.16em] text-[#EF4444] uppercase font-cinematic font-semibold">
+                        <span className="text-[8px] sm:text-[10px] tracking-[0.16em] text-[#EF4444] uppercase font-cinematic font-semibold">
                             ORIGINAL CINEMA 
                         </span>
                     </div>
@@ -62,9 +66,9 @@ export default function Hero(){
                
 
                 {/* Integrated Channel Stats Strip — Centered Single-Row */}
-                <div className="w-full max-w-xl rounded-2xl  backdrop-blur-sm  p-3.5 sm:p-4 grid grid-cols-3 divide-x divide-white/[0.08] text-center text-[#A6A29C] shadow-2xl">
+                <div className="w-full max-w-xl rounded-2xl border border-white/10 backdrop-blur-sm  p-3.5 sm:p-4 grid grid-cols-3 divide-x divide-white/[0.08] text-center text-[#A6A29C] shadow-2xl">
                     <div className="flex flex-col items-center px-2 space-y-1.5">
-                    <span className="font-serif text-lg sm:text-2xl text-[#F5F2ED] font-light">
+                    <span className="text-lg sm:text-2xl text-[#F5F2ED] font-light">
                         {/* {stats.totalStories}+ */}
                         49+
                     </span>
@@ -74,7 +78,7 @@ export default function Hero(){
                     </div>
 
                     <div className="flex flex-col items-center px-2 space-y-1.5">
-                    <span className="font-serif text-lg sm:text-2xl text-[#F5F2ED] font-light">
+                    <span className="text-lg sm:text-2xl text-[#F5F2ED] font-light">
                         {/* {stats.viewsFormatted} */}
                         22k
                     </span>
@@ -84,7 +88,7 @@ export default function Hero(){
                     </div>
 
                     <div className="flex flex-col items-center px-2 space-y-1.5">
-                    <div className="flex items-center gap-1.5 font-serif text-sm sm:text-2xl text-[#F5F2ED] font-light">
+                    <div className="flex items-center gap-1.5 text-sm sm:text-2xl text-[#F5F2ED] font-light">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
                         <span>6:00 PM</span>
                     </div>
