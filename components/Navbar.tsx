@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, Menu, Play, X } from "lucide-react";
 
+
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Stories', href: '/stories' },
@@ -47,7 +48,7 @@ export default function Navbar(){
                     : 'bg-gradient-to-b from-[#0B0B0B]/90 via-[#0B0B0B]/40 to-transparent py-5 sm:py-6'
                 }`}>
 
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+                <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between">
                     {/* Brand Logo with Avatar Image */}
                     <Link
                         href="/"
@@ -64,8 +65,8 @@ export default function Navbar(){
                             referrerPolicy="no-referrer"
                         />
                         </div>
-                        <span className="text-2xl font-semibold text-[#F5F2ED]">
-                        i'myounz
+                        <span className="text-2xl font-kalam font-normal text-[#F5F2ED]">
+                        immyounz
                         </span>
                     </Link>
                     
@@ -100,17 +101,60 @@ export default function Navbar(){
                     {/* Right Action — Clean Subscribe CTA (Stories counter removed) */}
                     <div className="hidden md:flex items-center gap-3">
                         <a
-                        href="https://www.youtube.com/@iamyounz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest px-5 py-2.5 rounded-full bg-[#E50914] hover:bg-[#c60812] text-white font-medium transition-all duration-300 shadow-md shadow-[#E50914]/25 transform hover:-translate-y-0.5 active:scale-95"
-                        id="nav-cta-subscribe"
+                            href="https://www.youtube.com/@iamyounz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="
+                            group relative inline-flex items-center gap-2
+                            overflow-hidden rounded-full
+                            border border-white/10
+                            bg-transparent
+                            px-5 py-2.5
+                            text-xs font-medium uppercase tracking-widest
+                            text-white
+                            transition-all duration-500
+                            hover:-translate-y-0.5
+                            hover:border-[#E50914]
+                            hover:shadow-lg hover:shadow-[#E50914]/30
+                            active:scale-95
+                            "
+                            id="nav-cta-subscribe"
                         >
-                        <Play className="w-3.5 h-3.5 fill-current" />
-                        <span>Subscribe</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            {/* Animated red background */}
+                            <span
+                            className="
+                                absolute inset-0 origin-left
+                                scale-x-0
+                                bg-[#E50914]
+                                transition-transform duration-500
+                                ease-[cubic-bezier(0.22,1,0.36,1)]
+                                group-hover:scale-x-100
+                            "
+                            />
+
+                            {/* Content */}
+                            <span className="relative z-10 flex items-center gap-2">
+                            <Play
+                                className="
+                                h-4 w-4
+                                transition-transform duration-300
+                                group-hover:scale-110
+                                "
+                            />
+
+                            <span>Subscribe</span>
+
+                            <ArrowUpRight
+                                className="
+                                h-3.5 w-3.5
+                                transition-all duration-300
+                                group-hover:translate-x-0.5
+                                group-hover:-translate-y-0.5
+                                "
+                            />
+                            </span>
                         </a>
-                    </div>
+                        </div>
 
                     {/* Mobile Hamburger Button */}
                     <button
