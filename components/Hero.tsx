@@ -1,12 +1,10 @@
-import { ArrowDown, ArrowUpRight, Compass, MoveDown, Play } from "lucide-react";
+import {  ArrowUpRight, MoveDown,  } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {  motion } from "motion/react";
 import ChannelStatsCard from "./ChannelStatsCard";
 
 export default function Hero(){
     const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@iamyounz";
-    // https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2000&auto=format&fit=crop
     return(
         <>
             <section className="relative min-h-[100svh] w-full flex flex-col justify-between items-center overflow-hidden bg-[#0B0B0B] pt-24 sm:pt-28 pb-6 sm:pb-8 px-6 sm:px-8">
@@ -29,7 +27,7 @@ export default function Hero(){
 
                 {/* Multi-stage Atmospheric Gradients */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/60 to-[#0B0B0B]/50" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/80 via-transparent to-[#0B0B0B]/80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/90 via-transparent to-[#0B0B0B]/90" />
 
                 {/* Subtle Grain Overlay */}
                 <div className="absolute inset-0 bg-grain opacity-25 pointer-events-none" />
@@ -94,10 +92,6 @@ export default function Hero(){
                     </div>
                  </div>
                
-
-                
-
-
                 {/* Minimal Bottom Scroll Indicator */}
                 <div className="relative z-10 w-full flex items-center justify-center pt-12 text-[#77736D] opacity-70 hover:opacity-100 transition-opacity flex-shrink-0">
                     <Link href="#stories" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] font-sans hover:text-[#EF4444] transition-colors">
