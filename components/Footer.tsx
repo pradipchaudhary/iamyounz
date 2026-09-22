@@ -13,10 +13,10 @@ const NAV_ITEMS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: 'YouTube', href: "https://youtube.com/iamyounz" },
-  { label: 'Instagram', href: 'https://instagram.com/iamyounz' },
-  { label: 'TikTok', href: 'https://tiktok.com/@iamyounz' },
-  { label: 'Facebook', href: 'https://facebook.com/iamyounz' },
+  { label: 'YouTube', href: "https://www.youtube.com/@iamyounz" },
+  { label: 'Instagram', href: 'https://www.instagram.com/iamyounz' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@iamyounz' },
+  { label: 'Facebook', href: 'https://www.facebook.com/iamyounzofficial' },
 ];
 
 export default function Footer() {
@@ -42,9 +42,16 @@ export default function Footer() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <span className="font-cinematic tracking-[0.24em] uppercase text-base sm:text-lg font-semibold text-[#F5F2ED]">
-                iamyounz
-              </span>
+              <Image
+                  src="/img/logo.png"
+                  alt={'iamyounz'}
+                  width={130}
+                  height={40}
+                  className="object-contain object-left"
+                  referrerPolicy="no-referrer"
+                  
+              />
+              
               <span className="w-1.5 h-1.5 rounded-full bg-[#E50914]" />
             </Link>
 
@@ -75,7 +82,7 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="https://youtube.com/iamyounz"
+                  href="https://www.youtube.com/@iamyounz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#F5F2ED] inline-flex items-center gap-1 transition-colors"
