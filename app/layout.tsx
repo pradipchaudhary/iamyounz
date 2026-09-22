@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Kalam } from "next/font/google";
-// import "/globals.css";
 import "@/styles/globals.css";
+import { YouTubeProvider } from "@/components/providers";
+import { getChannelOverview } from "@/lib";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,7 @@ const kalam = Kalam({
   weight: ["300", "400", "700"],
   variable: "--font-kalam",
 });
+
 
 
 export const metadata: Metadata = {
@@ -71,14 +73,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  let initialData = undefined;
+  try {
+    const overview = await getChannelOverview(true);
+    initialData = {
+      channel: overview.channel,
+      videos: overview.videos,
+      featuredVideo: overview.featuredVideo,
+      stats: overview.stats,
+      lastUpdated: new Date().toISOString(),
+    };
+  } catch (err) {
+    console.error('Failed to pre-fetch YouTube data in RootLayout:', err);
+  }
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full antialiased`}
     >
       <body className="bg-[#0B0B0B] text-[#F5F2ED] antialiased min-h-screen selection:bg-[#E50914] selection:text-white"
-        suppressHydrationWarning>{children}</body>
+        suppressHydrationWarning>
+          <YouTubeProvider initialData={initialData}>
+            {children}
+          </YouTubeProvider>
+        </body>
     </html>
   );
 }
