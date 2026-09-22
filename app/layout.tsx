@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Kalam } from "next/font/google";
 // import "/globals.css";
 import "@/styles/globals.css";
+import { YouTubeProvider } from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +21,20 @@ const kalam = Kalam({
   variable: "--font-kalam",
 });
 
+// initialData will be fetched in the RootLayout component and passed to the YouTubeProvider
+ let initialData = undefined;
+  try {
+    const overview = await getChannelOverview(true);
+    initialData = {
+      channel: overview.channel,
+      videos: overview.videos,
+      featuredVideo: overview.featuredVideo,
+      stats: overview.stats,
+      lastUpdated: new Date().toISOString(),
+    };
+  } catch (err) {
+    console.error('Failed to pre-fetch YouTube data in RootLayout:', err);
+  }
 
 export const metadata: Metadata = {
   title: 'iamyounz — Stories That Stay With You',
@@ -78,7 +93,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} h-full antialiased`}
     >
       <body className="bg-[#0B0B0B] text-[#F5F2ED] antialiased min-h-screen selection:bg-[#E50914] selection:text-white"
-        suppressHydrationWarning>{children}</body>
+        suppressHydrationWarning>
+          <YouTubeProvider initialData={initialData}>
+            {children}
+          </YouTubeProvider>
+        </body>
     </html>
   );
 }
