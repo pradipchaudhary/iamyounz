@@ -1,5 +1,6 @@
 import BrandStatement from "@/components/BrandStatement";
 import CategorySection from "@/components/CategorySection";
+import FeaturedStory from "@/components/FeaturedStory";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <BrandStatement />
         <CategorySection />
+        <FeaturedStory />
         <QuoteSection />
         <SubscribeCTA />
       </main>
