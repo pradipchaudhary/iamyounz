@@ -3,7 +3,7 @@ import CategorySection from "@/components/CategorySection";
 import FeaturedStory from "@/components/FeaturedStory";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import QuoteSection from "@/components/QuoteSection";
 import SubscribeCTA from "@/components/SubscribeCTA";
 

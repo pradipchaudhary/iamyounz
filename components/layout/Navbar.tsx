@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, Menu, Play, X } from "lucide-react";
+import { useYouTube } from "../providers";
+import { DEFAULT_AVATAR_URL } from "@/constants";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -17,6 +19,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { channel } = useYouTube();
+  //   const avatarSrc =
+  // channel?.snippet?.thumbnails?.high?.url || "/img/profile.png";
+  console.log(channel);
+
+  const avatarSrc = channel.avatarUrl || DEFAULT_AVATAR_URL;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +65,7 @@ export default function Navbar() {
           >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden ring-1 ring-white/20 shadow-md flex-shrink-0 bg-[#161616]">
               <Image
-                src="/img/profile.png"
+                src={avatarSrc}
                 alt={"iamyounz"}
                 fill
                 sizes="40px"
